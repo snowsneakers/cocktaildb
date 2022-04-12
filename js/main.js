@@ -7,7 +7,7 @@ input.addEventListener('keyup', e => {
 })
 
 function cocktail(){
-    input = document.querySelector('input').value.split(' ').join('_')
+    input = document.querySelector('input').value.split(' ').join('%20')
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${input}`
   console.log(url)
     fetch(url)
