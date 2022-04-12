@@ -1,75 +1,114 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  font-family: "Bebas Neue", cursive;
-  font-family: "Roboto Mono", monospace;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Roboto Mono', monospace;
 }
-body {
-  background: #e9e7e1;
-  color: #191919;
+body{
+    min-height: 100vh;
+    background: #e9e7e1;
+    color: #191919;
 }
-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+
 }
-.container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  padding: 2rem;
-  gap: 1rem;
-}
-section {
-  width: 100%;
-  position: relative;
-  box-shadow: 0 2px 5px 0 rgba(97, 97, 97, 0.363);
-  padding: 2rem;
-  border-radius: 2rem;
-}
-img {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-}
-h2 {
-  font-size: 2vw;
-  padding-bottom: 1rem;
-}
-p {
-  font-size: 1vw;
-}
-h3 {
-  font-size: 1.5vw;
-  padding-bottom: 1rem;
-}
-span {
-  display: block;
-  padding-bottom: 1rem;
-}
-input {
-  padding: 0.5rem;
+.swiper{
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
 }
 
-@media screen and (max-width: 800px) {
-  .container {
+.card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardInfo{
+    width: 60%;
+    box-shadow: 0 2px 5px 0 rgba(97, 97, 97, 0.363);
+    padding: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left,
+.right{
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: cetner;
+    align-items: flex-start;
     justify-content: center;
-  }
-  h2,
-  h3 {
-    font-size: 1.2rem;
-  }
-  p,
-  span {
-    font-size: 1rem;
-  }
+    padding: 2rem;
+}
+.left{
+    align-items: center;
+}
+.image{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    width: 100%;
+    border-radius: 2rem;
+}
+.card span{
+    display: block;
+}
+
+
+/* text styles */
+
+h2,h3{
+    font-size: 2vw;
+    padding-bottom: 1rem;
+}
+h3{
+    font-size: 1.5vw;
+}
+p, .card span{
+    padding-bottom: 1rem;
+    font-size: 1.2vw;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .cardInfo{
+        flex-direction: column;
+        padding: 0;
+    }
+    .left,
+    .right{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: .8rem;
+    }
+    .image{
+        width: 70%;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    h3{
+        font-size: .8rem;
+    }
+    p, .card span{
+        font-size: .6rem;
+    }
 }
